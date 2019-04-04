@@ -16,7 +16,15 @@ public class SortCompare {
         if (alg.equals("Insertion")) Insertion.sort(a);
         if (alg.equals("Selection")) Selection.sort(a);
         if (alg.equals("Shell")) Shell.sort(a);
-        /*if (alg.equals("Merge")) Merge.sort(a);
+        if (alg.equals("TBMerge")) {
+            Double[] aux = new Double[a.length];
+            TBMerge.sort(a,aux);
+        }
+        if (alg.equals("BTMerge")) {
+            Double[] aux = new Double[a.length];
+            TBMerge.sort(a,aux);
+        }
+        /*if (alg.equals("TBMerge")) TBMerge.sort(a);
         if (alg.equals("Quick")) Quick.sort(a);
         if (alg.equals("Heap")) Heap.sort(a);*/
         Template.show(a);
@@ -35,9 +43,11 @@ public class SortCompare {
     }
 
     public static void main(String[] args) {
-        String[] str = new String[]{"Insertion","Selection","Shell"};
+        String[] str = new String[]{"Insertion","Selection","Shell","TBMerge","BTMerge"};
         System.out.println(str[0] +":"+timeRandomInput(str[0],10,10));
         System.out.println(str[1] +":"+timeRandomInput(str[1],10,10));
         System.out.println(str[2] +":"+timeRandomInput(str[2],10,10));
+        System.out.println(str[3] +":"+timeRandomInput(str[3],10,10));
+        System.out.println(str[4] +":"+timeRandomInput(str[4],10,10));
     }
 }
